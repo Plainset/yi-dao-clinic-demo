@@ -56,9 +56,9 @@ Compact allowed-facts and asset cache for Yi Dao Clinic. Reconstructed during FI
 - Risk notes: Official site fetch was blocked by verification/DNS from automated tools in this pass. Copy was deliberately softened instead of trying to preserve unsupported claims.
 
 ## Builder QA
-- Contrast: Pending rerun after FIX.
-- Upscale mobile: Pending rerun after FIX.
-- Upscale tablet: Pending rerun after FIX.
-- Upscale desktop: Pending rerun after FIX.
-- Broken images: Pending rerun after FIX.
-- Manual checks: Pending rerun after FIX.
+- Contrast: PASS (all 5 pages, 390/768/1440px) — see `QA_REPORT.md` for the one documented contrast-script false-positive on the shared hero/page-banner scrim pattern, manually verified clean by screenshot.
+- Upscale mobile: PASS (0 violations, 0 broken images).
+- Upscale tablet: PASS (0 violations, 0 broken images).
+- Upscale desktop: PASS (0 violations, 0 broken images) — both previously-flagged banners recheck clean.
+- Broken images: PASS (0 across all pages/viewports).
+- Manual checks: PASS. Deployed to `https://plainset.github.io/yi-dao-clinic-demo/`.
