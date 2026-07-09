@@ -2,10 +2,10 @@
 
 Operational handoff only. `LEADS.md` and `OUTREACH_LOG.md` remain the source of truth.
 
-- Current phase: FIX applied - BLOCKED on required rendered QA
-- Last trusted commit: current FIX commit once committed
-- Known untrusted state: Required rendered contrast and mobile/tablet/desktop image audits could not be rerun. Local preview server failed with `PermissionError: [Errno 1] Operation not permitted`; escalation was rejected by app usage limit; in-app browser blocks direct `file://` pages by URL policy.
-- Next exact action: When browser/local preview access is available, rerun `.pipeline/qa/upscale-audit.js` and `.pipeline/qa/contrast-audit.js` at 390x844, 768x1024 and 1440x900 across all pages. If clean, deploy `Plainset/yi-dao-clinic-demo`, confirm Pages loads, then draft outreach only in `vdvalkproductions@gmail.com`.
-- Deploy URL: n/a - not deployed because required rendered QA could not be completed
-- Outreach state: not drafted - no deployed URL and Gmail/account confirmation not attempted
-- Flags for Alex: Fixes are in place but do not deploy/send until rendered QA can be rerun; official Yi Dao site was blocked by verification/DNS during this pass, so final source wording should be confirmed with clinic-controlled copy before restoring any credentials, prices or testimonials.
+- Current phase: DEPLOYED
+- Last trusted commit: `2366561` "Fix Yi Dao review blockers" (no further code changes were needed — rendered QA passed as-is)
+- Known untrusted state: none. Rendered contrast and mobile/tablet/desktop image audits were rerun in this session via a local preview server (`.claude/launch.json` entry `yi-dao-clinic-site`, port 4213) and `mcp__Claude_Preview__*` browser tools — the earlier `PermissionError`/no-browser blocker did not reproduce here. All 5 pages x 3 breakpoints (390x844, 768x1024, 1440x900) came back clean for `.pipeline/qa/contrast-audit.js` and `.pipeline/qa/upscale-audit.js` (0 real violations, 0 broken images, 0 aspect mismatches). See `QA_REPORT.md` for full evidence, including one documented contrast-script false-positive (ancestor-only background walk can't see the sibling `__scrim`/`__media` layers used by this site's hero/page-banner pattern) that was manually verified clean by screenshot.
+- Next exact action: none required for this business. Outreach email is being drafted by the top-level session, not this agent.
+- Deploy URL: https://plainset.github.io/yi-dao-clinic-demo/ (repo: `Plainset/yi-dao-clinic-demo`, GitHub Pages from `main` branch root) — confirmed live and loading.
+- Outreach state: not yet drafted/sent. Top-level session is drafting in `vdvalkproductions@gmail.com` this round. Suggested hook: verified specific observation about Yi Dao Clinic's current site plus the live demo link.
+- Flags for Alex: Official Yi Dao site was blocked by verification/DNS during the earlier BUILD/REVIEW pass, so final source wording (prices, team credentials, testimonials) should still be confirmed with clinic-controlled copy before this demo is treated as a final handover rather than a concept pitch. No other open issues.
